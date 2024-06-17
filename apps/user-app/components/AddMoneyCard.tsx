@@ -26,7 +26,7 @@ export const AddMoney = () => {
             setAmount(Number(value))
         }} />
         <div className="py-4 text-left">
-            Bank Name:
+            Bank:
         </div>
         <Select onSelect={(value) => {
             setRedirectUrl(SUPPORTED_BANKS.find(x => x.name === value)?.redirectUrl || "")
@@ -40,7 +40,7 @@ export const AddMoney = () => {
                 await createOnRampTransaction(amount * 100, provider)
                 window.location.href = redirectUrl || "";
             }}>
-            Add Money
+            Add Money to Wallet
             </Button>
         </div>
     </div>
